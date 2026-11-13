@@ -14,6 +14,41 @@
    "harga": 9900.0,
    "pe": "N/A",
    "waktu": "15:27"
+  },
+  {
+   "kode": "PRDA",
+   "aksi": "beli",
+   "harga": 3580.0,
+   "pe": "N/A",
+   "waktu": "16:08"
+  },
+  {
+   "kode": "SEMA",
+   "aksi": "beli",
+   "harga": 324.0,
+   "pe": "N/A",
+   "waktu": "16:08"
+  },
+  {
+   "kode": "ULTJ",
+   "aksi": "beli",
+   "harga": 2090.0,
+   "pe": "N/A",
+   "waktu": "16:08"
+  },
+  {
+   "kode": "PKPK",
+   "aksi": "pantau",
+   "harga": 6775.0,
+   "pe": "N/A",
+   "waktu": "16:08"
+  },
+  {
+   "kode": "PTBA",
+   "aksi": "pantau",
+   "harga": 3210.0,
+   "pe": "N/A",
+   "waktu": "16:08"
   }
  ]
 }
