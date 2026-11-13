@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Menu Saham Syariah</title>
+<style>
+:root{--bg:#f6f7f4;--card:#fff;--fg:#1c2420;--mut:#66726b;--line:#e0e4de;--acc:#0f6b4b;--up:#0f6b4b;--down:#b3261e;
+--buy:#0f6b4b;--buy-bg:#d9f0e4;--watch:#8a5a00;--watch-bg:#fbefcf}
+@media (prefers-color-scheme:dark){:root{--bg:#121714;--card:#1b221e;--fg:#e8ede9;--mut:#93a097;--line:#2c3631;--acc:#4cc38f;--up:#6fdba9;--down:#ff9a92;
+--buy:#6fdba9;--buy-bg:#183a2b;--watch:#f0c35c;--watch-bg:#3b3012}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;
+padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:860px;margin:0 auto;padding-block:22px 48px}
+h1{font-size:21px;margin:0}
+.sub{color:var(--mut);font-size:13px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-top:16px}
+.card h2{font-size:15px;margin:0 0 8px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+th{color:var(--mut);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.chip{border-radius:999px;padding:2px 10px;font-size:12px;font-weight:600}
+.b-beli{background:var(--buy-bg);color:var(--buy)}.b-pantau{background:var(--watch-bg);color:var(--watch)}
+.up{color:var(--up)}.down{color:var(--down)}
+a{color:inherit}
+button{font:inherit;background:transparent;color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:8px 14px;cursor:pointer;margin-top:16px}
+.note{margin-top:20px;font-size:12px;color:var(--mut)}
+.empty{color:var(--mut);padding:30px 0;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Menu Saham Syariah</h1>
+<div class="sub" id="status">Memuat…</div>
+<div id="days"></div>
+<button id="more" hidden>Muat hari yang lebih lama</button>
+<p class="note">Hanya hasil saringan. Bukan rekomendasi investasi atau ajakan membeli/menjual. Harga terkini diambil dari Yahoo Finance dan dapat tertunda beberapa menit. Keputusan dan risiko sepenuhnya milik Anda.</p>
+</div>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const rp=n=>'Rp'+Math.round(n).toLocaleString('id-ID');
+const PAGE=7;let dates=[],shown=0,priceApi='',prices={},timer=null,lastOk=null;
+
+async function getJSON(p){const r=await fetch(p,{cache:'no-store'});if(!r.ok)throw new Error(p+' '+r.status);return r.json()}
+function fmtDate(d){return new Date(d+'T00:00:00').toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}
+
+function pctCell(code,base){
+  const q=prices[code+'.JK'];
+  if(!q||!(q.price>0))return ['<td class="n">–</td>','<td class="n">–</td>'];
+  const ch=(q.price-base)/base*100,cls=ch>0?'up':ch<0?'down':'';
+  return [`<td class="n">${rp(q.price)}</td>`,`<td class="n ${cls}">${ch>0?'+':''}${ch.toFixed(2)}%</td>`];
+}
+function dayHTML(day){
+  const rows=day.picks.map(p=>{const [now,pc]=pctCell(p.kode,p.harga);
+    return `<tr><td><b><a href="https://finance.yahoo.com/quote/${encodeURIComponent(p.kode)}.JK" target="_blank" rel="noopener">${esc(p.kode)}</a></b></td>
+    <td><span class="chip b-${p.aksi==='beli'?'beli':'pantau'}">${p.aksi==='beli'?'BELI':'PANTAU'}</span></td>
+    <td class="n">${rp(p.harga)}</td>${now}${pc}<td>${esc(String(p.pe).replace(' (Turnaround)',' (rugi)'))}</td></tr>`}).join('');
+  return `<div class="card"><h2><span>${esc(fmtDate(day.tanggal))}</span><span class="sub">${day.picks.length} saham</span></h2>
+  <div class="tw"><table><thead><tr><th>Kode</th><th>Aksi</th><th class="n">Harga rilis</th><th class="n">Harga kini</th><th class="n">Sejak rilis</th><th>P/E</th></tr></thead><tbody>${rows}</tbody></table></div></div>`;
+}
+let DAYS={};
+function render(){
+  const box=$('#days');
+  const list=dates.slice(0,shown).filter(d=>DAYS[d]);
+  box.innerHTML=list.length?list.map(d=>dayHTML(DAYS[d])).join(''):'<div class="empty">Belum ada menu yang dipublikasikan.</div>';
+  $('#more').hidden=shown>=dates.length;
+}
+function setStatus(){
+  if(!priceApi)return $('#status').textContent='Menampilkan harga saat rilis (harga terkini belum diaktifkan).';
+  $('#status').textContent=lastOk?`Harga terkini diperbarui ${lastOk.toLocaleTimeString('id-ID')} · otomatis tiap 60 detik`:'Harga terkini belum bisa dimuat, menampilkan harga saat rilis.';
+}
+async function refreshPrices(){
+  if(!priceApi)return;
+  const codes=[...new Set(dates.slice(0,shown).flatMap(d=>DAYS[d]?DAYS[d].picks.map(p=>p.kode+'.JK'):[]))];
+  try{
+    for(let i=0;i<codes.length;i+=40){
+      const part=codes.slice(i,i+40);
+      Object.assign(prices,await getJSON(priceApi.replace(/\/$/,'')+'/?s='+part.join(',')));
+    }
+    lastOk=new Date();
+  }catch(e){}
+  render();setStatus();
+}
+async function loadMore(){
+  const next=dates.slice(shown,shown+PAGE);
+  await Promise.all(next.map(async d=>{try{DAYS[d]=await getJSON('data/'+d+'.json')}catch(e){}}));
+  shown+=next.length;render();refreshPrices();
+}
+(async()=>{
+  try{priceApi=(await getJSON('config.json')).price_api||''}catch(e){}
+  try{dates=(await getJSON('data/index.json')).dates||[]}catch(e){}
+  $('#more').onclick=loadMore;
+  await loadMore();setStatus();
+  timer=setInterval(()=>{if(!document.hidden)refreshPrices()},60000);
+})();
+</script>
+</body>
+</html>
