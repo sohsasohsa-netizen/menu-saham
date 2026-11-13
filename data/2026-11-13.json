@@ -1,0 +1,19 @@
+{
+ "tanggal": "2026-11-13",
+ "picks": [
+  {
+   "kode": "DMAS",
+   "aksi": "beli",
+   "harga": 170.0,
+   "pe": "N/A",
+   "waktu": "15:27"
+  },
+  {
+   "kode": "AALI",
+   "aksi": "pantau",
+   "harga": 9900.0,
+   "pe": "N/A",
+   "waktu": "15:27"
+  }
+ ]
+}
