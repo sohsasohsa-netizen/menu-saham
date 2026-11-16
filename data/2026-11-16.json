@@ -1,0 +1,19 @@
+{
+ "tanggal": "2026-11-16",
+ "picks": [
+  {
+   "kode": "DKFT",
+   "aksi": "pantau",
+   "harga": 740.0,
+   "pe": "N/A",
+   "waktu": "21:10"
+  },
+  {
+   "kode": "LPIN",
+   "aksi": "pantau",
+   "harga": 472.0,
+   "pe": "N/A",
+   "waktu": "21:10"
+  }
+ ]
+}
