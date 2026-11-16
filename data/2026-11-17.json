@@ -49,6 +49,48 @@
    "harga": 3200.0,
    "pe": "N/A",
    "waktu": "01:14"
+  },
+  {
+   "kode": "AYAM",
+   "aksi": "beli",
+   "harga": 498.0,
+   "pe": "N/A",
+   "waktu": "01:43"
+  },
+  {
+   "kode": "FLMC",
+   "aksi": "beli",
+   "harga": 155.0,
+   "pe": "N/A",
+   "waktu": "01:43"
+  },
+  {
+   "kode": "JRPT",
+   "aksi": "beli",
+   "harga": 1160.0,
+   "pe": "N/A",
+   "waktu": "01:43"
+  },
+  {
+   "kode": "MPMX",
+   "aksi": "beli",
+   "harga": 1075.0,
+   "pe": "N/A",
+   "waktu": "01:43"
+  },
+  {
+   "kode": "DKFT",
+   "aksi": "breakout",
+   "harga": 795.0,
+   "pe": "N/A",
+   "waktu": "01:43"
+  },
+  {
+   "kode": "AKPI",
+   "aksi": "pantau",
+   "harga": 655.0,
+   "pe": "N/A",
+   "waktu": "01:43"
   }
  ]
 }
