@@ -1,0 +1,54 @@
+{
+ "tanggal": "2026-11-17",
+ "picks": [
+  {
+   "kode": "DMAS",
+   "aksi": "beli",
+   "harga": 169.0,
+   "pe": "N/A",
+   "waktu": "01:14"
+  },
+  {
+   "kode": "PRDA",
+   "aksi": "beli",
+   "harga": 3570.0,
+   "pe": "N/A",
+   "waktu": "01:14"
+  },
+  {
+   "kode": "SEMA",
+   "aksi": "beli",
+   "harga": 322.0,
+   "pe": "N/A",
+   "waktu": "01:14"
+  },
+  {
+   "kode": "ULTJ",
+   "aksi": "beli",
+   "harga": 2090.0,
+   "pe": "N/A",
+   "waktu": "01:14"
+  },
+  {
+   "kode": "AALI",
+   "aksi": "pantau",
+   "harga": 9900.0,
+   "pe": "N/A",
+   "waktu": "01:14"
+  },
+  {
+   "kode": "PKPK",
+   "aksi": "pantau",
+   "harga": 6775.0,
+   "pe": "N/A",
+   "waktu": "01:14"
+  },
+  {
+   "kode": "PTBA",
+   "aksi": "pantau",
+   "harga": 3200.0,
+   "pe": "N/A",
+   "waktu": "01:14"
+  }
+ ]
+}
