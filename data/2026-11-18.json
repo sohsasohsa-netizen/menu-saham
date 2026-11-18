@@ -28,6 +28,20 @@
    "harga": 10000.0,
    "pe": "N/A",
    "waktu": "15:15"
+  },
+  {
+   "kode": "ALKA",
+   "aksi": "beli",
+   "harga": 5175.0,
+   "pe": "N/A",
+   "waktu": "20:36"
+  },
+  {
+   "kode": "GEMS",
+   "aksi": "beli",
+   "harga": 6975.0,
+   "pe": "N/A",
+   "waktu": "20:36"
   }
  ]
 }
