@@ -1,0 +1,26 @@
+{
+ "tanggal": "2026-11-18",
+ "picks": [
+  {
+   "kode": "JRPT",
+   "aksi": "beli",
+   "harga": 1140.0,
+   "pe": "N/A",
+   "waktu": "11:56"
+  },
+  {
+   "kode": "ABMM",
+   "aksi": "pantau",
+   "harga": 2810.0,
+   "pe": "N/A",
+   "waktu": "11:56"
+  },
+  {
+   "kode": "AKPI",
+   "aksi": "pantau",
+   "harga": 650.0,
+   "pe": "N/A",
+   "waktu": "11:56"
+  }
+ ]
+}
