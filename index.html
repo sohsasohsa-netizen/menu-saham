@@ -6,9 +6,9 @@
 <title>Menu Saham Syariah</title>
 <style>
 :root{--bg:#f6f7f4;--card:#fff;--fg:#1c2420;--mut:#66726b;--line:#e0e4de;--acc:#0f6b4b;--up:#0f6b4b;--down:#b3261e;
---buy:#0f6b4b;--buy-bg:#d9f0e4;--watch:#8a5a00;--watch-bg:#fbefcf;--brk:#1c5cab;--brk-bg:#dbe8fa;--ptr:#6a3fb5;--ptr-bg:#ece4fa;--out:#b3261e;--out-bg:#fbe3e1}
+--buy:#0f6b4b;--buy-bg:#d9f0e4;--watch:#8a5a00;--watch-bg:#fbefcf;--brk:#1c5cab;--brk-bg:#dbe8fa;--ptr:#6a3fb5;--ptr-bg:#ece4fa;--rkt:#b3410e;--rkt-bg:#fde3d4;--out:#b3261e;--out-bg:#fbe3e1}
 @media (prefers-color-scheme:dark){:root{--bg:#121714;--card:#1b221e;--fg:#e8ede9;--mut:#93a097;--line:#2c3631;--acc:#4cc38f;--up:#6fdba9;--down:#ff9a92;
---buy:#6fdba9;--buy-bg:#183a2b;--watch:#f0c35c;--watch-bg:#3b3012;--brk:#9ec5f4;--brk-bg:#17304f;--ptr:#c4a8f5;--ptr-bg:#2f2347;--out:#ff9a92;--out-bg:#4a1f1c}}
+--buy:#6fdba9;--buy-bg:#183a2b;--watch:#f0c35c;--watch-bg:#3b3012;--brk:#9ec5f4;--brk-bg:#17304f;--ptr:#c4a8f5;--ptr-bg:#2f2347;--rkt:#ffab7a;--rkt-bg:#47230f;--out:#ff9a92;--out-bg:#4a1f1c}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;
 padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -24,7 +24,7 @@ tr:last-child td{border-bottom:0}
 th{color:var(--mut);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
 td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
 .chip{border-radius:999px;padding:2px 10px;font-size:12px;font-weight:600}
-.b-beli{background:var(--buy-bg);color:var(--buy)}.b-pantau{background:var(--watch-bg);color:var(--watch)}.b-breakout{background:var(--brk-bg);color:var(--brk)}.b-patah_tren{background:var(--ptr-bg);color:var(--ptr)}.b-keluar{background:var(--out-bg);color:var(--out);margin-left:6px}
+.b-beli{background:var(--buy-bg);color:var(--buy)}.b-pantau{background:var(--watch-bg);color:var(--watch)}.b-breakout{background:var(--brk-bg);color:var(--brk)}.b-patah_tren{background:var(--ptr-bg);color:var(--ptr)}.b-roket{background:var(--rkt-bg);color:var(--rkt)}.b-keluar{background:var(--out-bg);color:var(--out);margin-left:6px}
 .up{color:var(--up)}.down{color:var(--down)}
 a{color:inherit}
 button{font:inherit;background:transparent;color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:8px 14px;cursor:pointer;margin-top:16px}
@@ -55,7 +55,7 @@ function pctCell(code,base){
   const ch=(q.price-base)/base*100,cls=ch>0?'up':ch<0?'down':'';
   return [`<td class="n">${rp(q.price)}</td>`,`<td class="n ${cls}">${ch>0?'+':''}${ch.toFixed(2)}%</td>`];
 }
-const AK={beli:'BELI',breakout:'BREAKOUT',patah_tren:'PATAH TREN',pantau:'PANTAU'};let EXITS={};
+const AK={beli:'BELI',breakout:'BREAKOUT',roket:'ROKET',patah_tren:'PATAH TREN',pantau:'PANTAU'};let EXITS={};
 function outChip(tgl,kode){const x=EXITS[tgl+'|'+kode];if(!x)return '';const d=String(x.tgl).split('-');
   return `<span class="chip b-keluar" title="Tanda keluar pada ${esc(x.tgl)} di ${rp(x.harga)}">KELUAR ${esc(d[2]+'/'+d[1])}</span>`}
 function dayHTML(day){
