@@ -21,6 +21,13 @@
    "harga": 650.0,
    "pe": "N/A",
    "waktu": "11:56"
+  },
+  {
+   "kode": "AALI",
+   "aksi": "beli",
+   "harga": 10000.0,
+   "pe": "N/A",
+   "waktu": "15:15"
   }
  ]
 }
