@@ -1,0 +1,82 @@
+{
+ "tanggal": "2026-11-19",
+ "picks": [
+  {
+   "kode": "AALI",
+   "aksi": "beli",
+   "harga": 9725.0,
+   "pe": "N/A",
+   "waktu": "16:47"
+  },
+  {
+   "kode": "AGAR",
+   "aksi": "beli",
+   "harga": 1405.0,
+   "pe": "N/A",
+   "waktu": "16:47"
+  },
+  {
+   "kode": "AGII",
+   "aksi": "beli",
+   "harga": 3310.0,
+   "pe": "N/A",
+   "waktu": "16:47"
+  },
+  {
+   "kode": "ASGR",
+   "aksi": "beli",
+   "harga": 2600.0,
+   "pe": "N/A",
+   "waktu": "16:47"
+  },
+  {
+   "kode": "AYLS",
+   "aksi": "beli",
+   "harga": 180.0,
+   "pe": "N/A",
+   "waktu": "16:47"
+  },
+  {
+   "kode": "BLES",
+   "aksi": "beli",
+   "harga": 191.0,
+   "pe": "N/A",
+   "waktu": "16:47"
+  },
+  {
+   "kode": "BTPS",
+   "aksi": "beli",
+   "harga": 1045.0,
+   "pe": "N/A",
+   "waktu": "16:47"
+  },
+  {
+   "kode": "DMAS",
+   "aksi": "beli",
+   "harga": 163.0,
+   "pe": "N/A",
+   "waktu": "16:47"
+  },
+  {
+   "kode": "KKGI",
+   "aksi": "beli",
+   "harga": 304.0,
+   "pe": "N/A",
+   "waktu": "16:47"
+  },
+  {
+   "kode": "LPPF",
+   "aksi": "beli",
+   "harga": 1645.0,
+   "pe": "N/A",
+   "waktu": "16:47"
+  },
+  {
+   "kode": "ARII",
+   "aksi": "pantau",
+   "harga": 680.0,
+   "pe": "N/A",
+   "waktu": "16:47"
+  }
+ ]
+}
