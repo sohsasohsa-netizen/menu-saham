@@ -1,0 +1,33 @@
+{
+ "tanggal": "2026-11-20",
+ "picks": [
+  {
+   "kode": "AALI",
+   "aksi": "beli",
+   "harga": 9800.0,
+   "pe": "N/A",
+   "waktu": "14:49"
+  },
+  {
+   "kode": "ASGR",
+   "aksi": "beli",
+   "harga": 2570.0,
+   "pe": "N/A",
+   "waktu": "14:49"
+  },
+  {
+   "kode": "POWR",
+   "aksi": "beli",
+   "harga": 940.0,
+   "pe": "N/A",
+   "waktu": "14:49"
+  },
+  {
+   "kode": "IDEA",
+   "aksi": "pantau",
+   "harga": 386.0,
+   "pe": "N/A",
+   "waktu": "14:49"
+  }
+ ]
+}
