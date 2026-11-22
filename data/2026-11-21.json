@@ -1,0 +1,47 @@
+{
+ "tanggal": "2026-11-21",
+ "picks": [
+  {
+   "kode": "LSIP",
+   "aksi": "beli",
+   "harga": 1560.0,
+   "pe": "4.6",
+   "waktu": "19:49"
+  },
+  {
+   "kode": "INTP",
+   "aksi": "beli",
+   "harga": 6100.0,
+   "pe": "11.5",
+   "waktu": "19:49"
+  },
+  {
+   "kode": "ASGR",
+   "aksi": "beli",
+   "harga": 2550.0,
+   "pe": "12.4",
+   "waktu": "19:49"
+  },
+  {
+   "kode": "AYAM",
+   "aksi": "beli",
+   "harga": 500.0,
+   "pe": "85.3",
+   "waktu": "19:49"
+  },
+  {
+   "kode": "KLBF",
+   "aksi": "patah_tren",
+   "harga": 780.0,
+   "pe": "9.7",
+   "waktu": "19:49"
+  },
+  {
+   "kode": "IDEA",
+   "aksi": "pantau",
+   "harga": 386.0,
+   "pe": "214.4",
+   "waktu": "19:49"
+  }
+ ]
+}
