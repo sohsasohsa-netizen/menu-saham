@@ -28,6 +28,34 @@
    "harga": 248.0,
    "pe": "94.7",
    "waktu": "09:58"
+  },
+  {
+   "kode": "LSIP",
+   "aksi": "beli",
+   "harga": 1575.0,
+   "pe": "4.6",
+   "waktu": "20:51"
+  },
+  {
+   "kode": "AALI",
+   "aksi": "beli",
+   "harga": 9400.0,
+   "pe": "7.1",
+   "waktu": "20:51"
+  },
+  {
+   "kode": "AVIA",
+   "aksi": "beli",
+   "harga": 330.0,
+   "pe": "10.6",
+   "waktu": "20:51"
+  },
+  {
+   "kode": "ULTJ",
+   "aksi": "beli",
+   "harga": 2000.0,
+   "pe": "10.9",
+   "waktu": "20:51"
   }
  ]
 }
