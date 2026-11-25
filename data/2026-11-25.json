@@ -1,0 +1,33 @@
+{
+ "tanggal": "2026-11-25",
+ "picks": [
+  {
+   "kode": "DKFT",
+   "aksi": "beli",
+   "harga": 710.0,
+   "pe": "4.8",
+   "waktu": "09:58"
+  },
+  {
+   "kode": "INTP",
+   "aksi": "beli",
+   "harga": 6200.0,
+   "pe": "11.7",
+   "waktu": "09:58"
+  },
+  {
+   "kode": "ASGR",
+   "aksi": "beli",
+   "harga": 2640.0,
+   "pe": "12.8",
+   "waktu": "09:58"
+  },
+  {
+   "kode": "DEWI",
+   "aksi": "beli",
+   "harga": 248.0,
+   "pe": "94.7",
+   "waktu": "09:58"
+  }
+ ]
+}
